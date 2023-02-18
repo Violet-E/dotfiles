@@ -1,0 +1,259 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FiraCode Nerd Font Mono, Source Han Sans CN;
+    font-size: 12px;
+}
+
+window#waybar {
+    background-color: #282A2E;
+    color: #c3c3c3;
+    transition-property: background-color;
+    transition-duration: .2s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Avoid rounded borders under each button name */
+    all: unset;
+    border: none;
+    border-radius: 0;
+    color: #c3c3c3;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    background-color: #373B41;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+}
+
+#workspaces button:hover {
+    background-color: #474d56;
+    box-shadow: inset 0 -3px #c3c3c3;
+}
+
+#workspaces button.active{
+    background-color: #373B41;
+    box-shadow: inset 0 -3px #F0C674;
+}
+
+#workspaces button.urgent {
+    box-shadow: inset 0 -3px #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #e4e4e4;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding: 0 10px;
+    color: #c3c3c3;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    box-shadow: inset 0 -2px #64727D;
+}
+
+#battery {
+    box-shadow: inset 0 -2px #ffffff;
+}
+
+#battery.charging, #battery.plugged {
+    box-shadow: inset 0 -2px #26A65B;
+}
+
+@keyframes blink {
+    to {
+        box-shadow: inset 0 -2px #c3c3c3;
+    }
+}
+
+#battery.critical:not(.charging) {
+    box-shadow: inset 0 -2px #f53c3c;
+    color: #c3c3c3;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    box-shadow: inset 0 -2px #000000;
+}
+
+#cpu {
+    box-shadow: inset 0 -2px #2ecc71;
+}
+
+#memory {
+    box-shadow: inset 0 -2px #9b59b6;
+}
+
+#disk {
+    box-shadow: inset 0 -2px #964B00;
+}
+
+#backlight {
+    box-shadow: inset 0 -2px #90b1b1;
+}
+
+#network {
+    box-shadow: inset 0 -2px #2980b9;
+}
+
+#network.disconnected {
+    box-shadow: inset 0 -2px #f53c3c;
+}
+
+#custom-alsa {
+    box-shadow: inset 0 -2px #f1c40f;
+}
+
+#pulseaudio.muted {
+    box-shadow: inset 0 -2px #90b1b1;
+}
+
+#custom-media {
+    box-shadow: inset 0 -2px #66cc99;
+}
+
+#custom-media.custom-spotify {
+    box-shadow: inset 0 -2px #66cc99;
+}
+
+#custom-media.custom-vlc {
+    box-shadow: inset 0 -2px #ffa000;
+}
+
+#temperature {
+    box-shadow: inset 0 -2px #f0932b;
+}
+
+#temperature.critical {
+    box-shadow: inset 0 -2px #eb4d4b;
+}
+
+#tray {
+    box-shadow: inset 0 -2px #2980b9;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    box-shadow: inset 0 -2px #eb4d4b;
+}
+
+#idle_inhibitor {
+    box-shadow: inset 0 -2px #2d3436;
+}
+
+#idle_inhibitor.activated {
+    box-shadow: inset 0 -2px #ecf0f1;
+    color: #2d3436;
+}
+
+#mpd {
+    box-shadow: inset 0 -2px #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    box-shadow: inset 0 -2px #f53c3c;
+}
+
+#mpd.stopped {
+    box-shadow: inset 0 -2px #90b1b1;
+}
+
+#mpd.paused {
+    box-shadow: inset 0 -2px #51a37a;
+}
+
+#language {
+    box-shadow: inset 0 -2px #00b093;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    box-shadow: inset 0 -2px #97e1ad;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}

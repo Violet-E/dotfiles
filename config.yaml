@@ -1,0 +1,46 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+dotfiles:
+  d_hypr:
+    src: config/hypr
+    dst: ~/.config/hypr
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
+  d_sway:
+    src: config/sway
+    dst: ~/.config/sway
+  d_fish:
+    src: config/fish
+    dst: ~/.config/fish
+    chmod: '700'
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
+  d_i3:
+    src: config/i3
+    dst: ~/.config/i3
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+profiles:
+  Hayake:
+    dotfiles:
+    - d_hypr
+    - d_alacritty
+    - d_sway
+    - d_fish
+    - d_waybar
+    - d_polybar
+    - d_i3
+    - d_nvim
