@@ -4,6 +4,7 @@ SETUVAR --export 1:0
 SETUVAR --export APP_PORT:8081
 SETUVAR --export DATABASE_URL:postgresql\x3a//hayake\x40localhost\x3a5432/postgres
 SETUVAR --export DISPATCHER_PORT:8888
+SETUVAR --export DOTREPO:/home/hayake/dotfiles
 SETUVAR EDITOR:nvim
 SETUVAR --export GMAIL:al13606564867\x40gmail\x2ecom
 SETUVAR --export GPG_TTY:not\x20a\x20tty

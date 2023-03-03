@@ -94,7 +94,11 @@ button:hover {
 #workspaces {
     margin: 0 4px;
 }
-
+#window {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;

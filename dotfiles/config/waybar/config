@@ -5,8 +5,8 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["wlr/workspaces","sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio#microphone","custom/alsa", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
@@ -37,7 +37,7 @@
 
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 5
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -123,6 +123,16 @@
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
-    }
+    },
+    "wlr/workspaces": {
+     "format": "{icon}",
+     "on-scroll-up": "hyprctl dispatch workspace e+1",
+     "on-scroll-down": "hyprctl dispatch workspace e-1",
+     "on-click": "activate"
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
+    },
 }
 

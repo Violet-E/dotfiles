@@ -48,3 +48,7 @@ if test -f "$HOME/.gpg-agent-info"
 end
 set -U fish_user_paths /home/hayake/Documents/depot_tools $fish_user_paths
 set -U XDG_CONFIG_HOME "$HOME/.config"
+
+set -Ux DOTREPO "/home/hayake/dotfiles"
+alias dotgit="git -C $DOTREPO"
+alias dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install"
